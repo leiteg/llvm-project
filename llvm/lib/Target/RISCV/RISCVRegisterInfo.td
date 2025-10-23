@@ -870,3 +870,13 @@ let RegInfos = XLenRI in {
   def TRM2 : RISCVRegisterClass<[untyped], 32, (add (decimate TR, 2))>;
   def TRM4 : RISCVRegisterClass<[untyped], 32, (add (decimate TR, 4))>;
 }
+
+//===----------------------------------------------------------------------===//
+// Matrix registers
+//===----------------------------------------------------------------------===//
+
+foreach Index = !range(0, 32, 1) in {
+  def M#Index : RISCVReg<Index, "m"#Index>;
+}
+
+def MR : RISCVRegisterClass<[v16i32, v16f32], 32, (sequence "M%u", 0, 31)>;

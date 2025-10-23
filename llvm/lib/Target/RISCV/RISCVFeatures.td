@@ -1642,6 +1642,16 @@ def HasVendorXAndesVDot
       AssemblerPredicate<(all_of FeatureVendorXAndesVDot),
                          "'XAndesVDot' (Andes Vector Dot Product Extension)">;
 
+// Matrix Extension(s)
+
+def FeatureVendorXMatrix
+    : RISCVExtension<0, 1, "Matrix Extension">;
+
+def HasVendorXMatrix
+    : Predicate<"Subtarget->hasVendorXMatrix()">,
+      AssemblerPredicate<(all_of FeatureVendorXMatrix),
+                         "'XMatrix' (Matrix Extension)">;
+
 //===----------------------------------------------------------------------===//
 // LLVM specific features and extensions
 //===----------------------------------------------------------------------===//
