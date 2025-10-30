@@ -161,3 +161,14 @@ def RVA23S64 : RISCVProfile<"rva23s64", RVA23S64Features>;
 def RVB23U64 : RISCVProfile<"rvb23u64", RVB23U64Features>;
 def RVB23S64 : RISCVProfile<"rvb23s64", RVB23S64Features>;
 def RVM23U32 : RISCVExperimentalProfile<"rvm23u32", RVM23U32Features>;
+
+
+defvar RVMatrixFeatures = [Feature64Bit,
+                               FeatureStdExtI,
+                               FeatureStdExtM,
+                               FeatureStdExtA,
+                               FeatureStdExtF,
+                               FeatureStdExtD,
+                               FeatureStdExtC,
+                               FeatureVendorXMatrix];
+def RVMatrix : RISCVProfile<"rvmatrix", RVMatrixFeatures>;
